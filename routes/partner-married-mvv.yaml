@@ -1,0 +1,153 @@
+id: partner-married-mvv
+name: "MVV + Residence Permit - Married or Registered Partner"
+
+authority:
+  name: "IND - Immigratie- en Naturalisatiedienst"
+  country: NL
+  url: "https://ind.nl/en/residence-permits/family-and-partner/residence-permit-for-partner"
+
+applicant_profile:
+  relationship_to_reference:
+    - "spouse (married partner)"
+    - "registered partner"
+  reference_holder_status:
+    - "Dutch national"
+    - "foreign national with valid Dutch residence permit"
+    - "EU/EEA citizen resident in the Netherlands"
+  age_minimum: 21
+  notes: >
+    The applicant must be at least 21 years old, as must the reference holder.
+    The applicant must come from outside the Netherlands (applies from abroad
+    via the Dutch embassy/consulate in their country of origin or residence).
+    EU/EEA nationals and their family members may fall under EU law and may not
+    need an MVV; this route covers the standard non-EU/EEA track.
+
+eligibility:
+  conditions:
+    - id: e1
+      description: "Applicant and reference holder are married or registered partners"
+    - id: e2
+      description: "Both applicant and reference holder are at least 21 years old"
+    - id: e3
+      description: >
+        Reference holder has independent, sustainable, and sufficient income
+        (at least 100% of the statutory minimum wage, or 70% under certain
+        circumstances such as disability/social assistance benefit)
+      threshold: "100% of Dutch statutory minimum wage (bruto per month)"
+      uncertainty: >
+        The IND pages show slightly different income thresholds on the partner
+        page vs. the independent-income page; verify the current exact amount
+        at https://ind.nl/en/independent-sustainable-and-sufficient-income
+        before advising a client.
+    - id: e4
+      description: "Applicant has passed or is exempt from the civic integration exam abroad (inburgeringsexamen buitenland)"
+      notes: >
+        Exemptions apply to nationals of certain countries (AU, BE, CA, CH, DE,
+        FR, GB, JP, NZ, US, etc.) and to holders of certain educational
+        qualifications. Check the full exemption list with IND.
+    - id: e5
+      description: "Relationship is genuine (not a marriage of convenience)"
+    - id: e6
+      description: "Applicant does not pose a threat to public order or national security"
+
+required_documents:
+  - id: d1
+    name: "Valid passport"
+    mandatory: true
+    description: >
+      Original passport, valid for the duration of the intended stay.
+      Copy required for the application.
+  - id: d2
+    name: "Recent colour passport photo"
+    mandatory: true
+    description: "ICAO-compliant passport photo, taken within the last 6 months"
+  - id: d3
+    name: "Marriage certificate or certificate of registered partnership"
+    mandatory: true
+    description: >
+      Original or certified copy, with certified Dutch or English translation
+      if not in Dutch, English, German, or French.
+  - id: d4
+    name: "Proof of reference holder's residence in the Netherlands"
+    mandatory: true
+    description: >
+      For Dutch nationals: copy of Dutch passport or ID. For foreign nationals:
+      copy of valid Dutch residence permit. Registration at the municipality
+      (BRP extract) may also be required.
+  - id: d5
+    name: "Proof of sufficient income of reference holder"
+    mandatory: true
+    description: >
+      Recent employer declaration (werkgeversverklaring) and payslips, or
+      (if self-employed) recent tax assessments, or proof of benefit income.
+      Income must be independent (not from benefits that are means-tested
+      and may be reclaimed), sustainable, and sufficient.
+  - id: d6
+    name: "Certificate of civic integration exam abroad or proof of exemption"
+    mandatory: true
+    description: >
+      Certificate from the DUO/IND showing the applicant passed the exam,
+      or official proof of exemption by nationality or qualification.
+    notes: "Not required for nationals of AU, BE, CA, CH, DE, FR, GB, JP, NZ, US, and some others."
+  - id: d7
+    name: "Antecedents certificate (certificate of good conduct)"
+    mandatory: true
+    description: >
+      Police clearance certificate from every country where the applicant
+      has lived for more than 1 year since age 12. Must be apostilled or
+      legalised, and translated if not in Dutch, English, German, or French.
+  - id: d8
+    name: "Birth certificate of applicant"
+    mandatory: false
+    description: "May be required; check current document checklist."
+    notes: >
+      Always verify the current document list via the IND document checklist
+      tool at https://ind.nl/en/questionnaire-document-overview-partner-with-mvv
+
+fees:
+  - label: "MVV + first-time residence permit (combined)"
+    amount_eur: 254
+    notes: "Fee as published on IND website, retrieved 2026-11-18. Verify at https://ind.nl/en/fees-costs-of-an-application before use."
+
+processing_time:
+  legal_max_days: 90
+  notes: >
+    The IND must decide within 90 days of receiving the complete application.
+    The MVV sticker (issued at the embassy after positive decision) is valid
+    for 90 days; the applicant must travel to the Netherlands within that window.
+    Upon arrival, a TB test may be required; the actual residence permit card
+    is collected at the IND desk in the Netherlands.
+
+forms:
+  - id: B07001E
+    name: "Application form married or registered partner (B07001E)"
+    notes: >
+      PDF form, to be used when the applicant applies in person at the
+      Dutch embassy/consulate. Online application via DigiD (by the reference
+      holder from the Netherlands) is preferred where available.
+  - id: online
+    name: "Online family application (eforms.ind.nl)"
+    url: "https://eforms.ind.nl/eDienstverlening/formulier/en-GB/DefaultEnvironment/scFamilieGezin.aspx"
+    notes: "Reference holder applies online from the Netherlands using DigiD."
+
+portal:
+  name: "IND Online (eforms.ind.nl)"
+  url: "https://eforms.ind.nl/eDienstverlening/formulier/en-GB/DefaultEnvironment/scFamilieGezin.aspx"
+  notes: "DigiD required for online application. Reference holder initiates the application from the Netherlands."
+
+sources:
+  - url: "https://ind.nl/en/residence-permits/family-and-partner/residence-permit-for-partner"
+    retrieved: "2026-11-18"
+    description: "IND main page for partner residence permit (English)"
+  - url: "https://ind.nl/en/questionnaire-document-overview-partner-with-mvv"
+    retrieved: "2026-11-18"
+    description: "IND document checklist tool for partner with MVV"
+  - url: "https://ind.nl/en/fees-costs-of-an-application"
+    retrieved: "2026-11-18"
+    description: "IND fee overview page"
+  - url: "https://ind.nl/en/independent-sustainable-and-sufficient-income"
+    retrieved: "2026-11-18"
+    description: "IND income requirements detail page"
+  - url: "https://ind.nl/en/apply-for-mvv-and-residence-permit-from-abroad"
+    retrieved: "2026-11-18"
+    description: "IND: how to apply for MVV and residence permit from abroad"
